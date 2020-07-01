@@ -36,6 +36,11 @@ type
     LabelSendMessageLParam: TLabel;
     ButtonMessageWmClose: TButton;
     ButtonMessageWmQuit: TButton;
+    ButtonMessageWmNcDestroy: TButton;
+    ButtonMessageWmKillFocus: TButton;
+    ButtonSendMessageWmCommand: TButton;
+    ButtonSendMessageWmDestroy: TButton;
+    ButtonSendMessageWmTimeNotify: TButton;
     procedure ButtonFindWindowTitleClick(Sender: TObject);
     procedure ButtonWindowHideClick(Sender: TObject);
     procedure ButtonWindowShowClick(Sender: TObject);
@@ -49,6 +54,11 @@ type
     procedure ButtonSendMessageClick(Sender: TObject);
     procedure ButtonMessageWmCloseClick(Sender: TObject);
     procedure ButtonMessageWmQuitClick(Sender: TObject);
+    procedure ButtonMessageWmNcDestroyClick(Sender: TObject);
+    procedure ButtonMessageWmKillFocusClick(Sender: TObject);
+    procedure ButtonSendMessageWmCommandClick(Sender: TObject);
+    procedure ButtonSendMessageWmDestroyClick(Sender: TObject);
+    procedure ButtonSendMessageWmTimeNotifyClick(Sender: TObject);
   private
     SetHandleLast: HWND;
     SetHandleCount: Integer;
@@ -186,6 +196,36 @@ procedure TForm1.ButtonMessageWmQuitClick(Sender: TObject);
 begin
   StatusBar.SimpleText := 'WinApi Call Result: $' +
     IntToHex(SendMessage(StrToInt(EditWindowHandle.Text), WM_QUIT, 0, 0), 8);
+end;
+
+procedure TForm1.ButtonMessageWmNcDestroyClick(Sender: TObject);
+begin
+  StatusBar.SimpleText := 'WinApi Call Result: $' +
+    IntToHex(SendMessage(StrToInt(EditWindowHandle.Text), WM_NCDESTROY, 0, 0), 8);
+end;
+
+procedure TForm1.ButtonMessageWmKillFocusClick(Sender: TObject);
+begin
+  StatusBar.SimpleText := 'WinApi Call Result: $' +
+    IntToHex(SendMessage(StrToInt(EditWindowHandle.Text), WM_KILLFOCUS, 0, 0), 8);
+end;
+
+procedure TForm1.ButtonSendMessageWmCommandClick(Sender: TObject);
+begin
+  StatusBar.SimpleText := 'WinApi Call Result: $' +
+    IntToHex(SendMessage(StrToInt(EditWindowHandle.Text), WM_COMMAND, 0, 0), 8);
+end;
+
+procedure TForm1.ButtonSendMessageWmDestroyClick(Sender: TObject);
+begin
+  StatusBar.SimpleText := 'WinApi Call Result: $' +
+    IntToHex(SendMessage(StrToInt(EditWindowHandle.Text), WM_DESTROY, 0, 0), 8);
+end;
+
+procedure TForm1.ButtonSendMessageWmTimeNotifyClick(Sender: TObject);
+begin
+  StatusBar.SimpleText := 'WinApi Call Result: $' +
+    IntToHex(SendMessage(StrToInt(EditWindowHandle.Text), WM_IME_NOTIFY, IMN_CLOSESTATUSWINDOW, 0), 8);
 end;
 
 end.

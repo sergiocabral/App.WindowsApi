@@ -1,8 +1,8 @@
 object Form1: TForm1
-  Left = 1090
-  Top = 592
+  Left = 830
+  Top = 297
   Width = 505
-  Height = 403
+  Height = 402
   Caption = 'Windows API'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -14,7 +14,7 @@ object Form1: TForm1
   Position = poDefaultPosOnly
   DesignSize = (
     489
-    364)
+    363)
   PixelsPerInch = 96
   TextHeight = 13
   object LabelFindWindowTitle: TLabel
@@ -41,35 +41,35 @@ object Form1: TForm1
   end
   object LabelSetWindowText: TLabel
     Left = 8
-    Top = 224
+    Top = 248
     Width = 81
     Height = 13
     Caption = 'Set Window Title'
   end
   object LabelSendMessage: TLabel
     Left = 8
-    Top = 272
+    Top = 296
     Width = 71
     Height = 13
     Caption = 'Send Message'
   end
   object LabelSendMessageMsg: TLabel
     Left = 8
-    Top = 294
+    Top = 318
     Width = 20
     Height = 13
     Caption = 'Msg'
   end
   object LabelSendMessageWParam: TLabel
     Left = 126
-    Top = 294
+    Top = 318
     Width = 38
     Height = 13
     Caption = 'wParam'
   end
   object LabelSendMessageLParam: TLabel
     Left = 268
-    Top = 294
+    Top = 318
     Width = 32
     Height = 13
     Caption = 'lParam'
@@ -156,14 +156,14 @@ object Form1: TForm1
   end
   object StatusBar: TStatusBar
     Left = 0
-    Top = 345
+    Top = 344
     Width = 489
     Height = 19
     Panels = <>
   end
   object EditSetWindowText: TEdit
     Left = 8
-    Top = 243
+    Top = 267
     Width = 393
     Height = 21
     Anchors = [akLeft, akTop, akRight]
@@ -171,7 +171,7 @@ object Form1: TForm1
   end
   object ButtonSetWindowText: TButton
     Left = 406
-    Top = 240
+    Top = 264
     Width = 75
     Height = 25
     Anchors = [akTop, akRight]
@@ -190,7 +190,7 @@ object Form1: TForm1
   end
   object ButtonSendMessage: TButton
     Left = 406
-    Top = 288
+    Top = 312
     Width = 75
     Height = 25
     Anchors = [akTop, akRight]
@@ -200,7 +200,7 @@ object Form1: TForm1
   end
   object EditSendMessageMsg: TEdit
     Left = 32
-    Top = 291
+    Top = 315
     Width = 81
     Height = 21
     TabOrder = 14
@@ -208,7 +208,7 @@ object Form1: TForm1
   end
   object EditSendMessageWParam: TEdit
     Left = 168
-    Top = 291
+    Top = 315
     Width = 81
     Height = 21
     TabOrder = 15
@@ -216,7 +216,7 @@ object Form1: TForm1
   end
   object EditSendMessageLParam: TEdit
     Left = 304
-    Top = 291
+    Top = 315
     Width = 81
     Height = 21
     TabOrder = 16
@@ -240,11 +240,56 @@ object Form1: TForm1
     TabOrder = 11
     OnClick = ButtonMessageWmQuitClick
   end
+  object ButtonMessageWmNcDestroy: TButton
+    Left = 166
+    Top = 176
+    Width = 115
+    Height = 25
+    Caption = 'WM_NCDESTROY'
+    TabOrder = 19
+    OnClick = ButtonMessageWmNcDestroyClick
+  end
+  object ButtonMessageWmKillFocus: TButton
+    Left = 286
+    Top = 176
+    Width = 99
+    Height = 25
+    Caption = 'WM_KILLFOCUS'
+    TabOrder = 20
+    OnClick = ButtonMessageWmKillFocusClick
+  end
+  object ButtonSendMessageWmCommand: TButton
+    Left = 391
+    Top = 176
+    Width = 92
+    Height = 25
+    Caption = 'WM_COMMAND'
+    TabOrder = 21
+    OnClick = ButtonSendMessageWmCommandClick
+  end
+  object ButtonSendMessageWmDestroy: TButton
+    Left = 6
+    Top = 208
+    Width = 91
+    Height = 25
+    Caption = 'WM_DESTROY'
+    TabOrder = 22
+    OnClick = ButtonSendMessageWmDestroyClick
+  end
+  object ButtonSendMessageWmTimeNotify: TButton
+    Left = 102
+    Top = 208
+    Width = 267
+    Height = 25
+    Caption = 'WM_IME_NOTIFY IMN_CLOSESTATUSWINDOW'
+    TabOrder = 23
+    OnClick = ButtonSendMessageWmTimeNotifyClick
+  end
   object TimerFindWindowWithMouse: TTimer
     Enabled = False
     Interval = 100
     OnTimer = TimerFindWindowWithMouseTimer
-    Left = 208
-    Top = 184
+    Left = 456
+    Top = 104
   end
 end
